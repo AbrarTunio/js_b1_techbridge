@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employee Salary Calculator</h1>
+
+    <form>
+        <label for="">Income</label>
+        <input type="text" id="income" >
+        <br><br>
+        <label for="">Deduction</label>
+        <input type="text" id="deduction">
+        <br><br>
+        <label for="">Total Amount</label>
+        <input id="total" type="text" disabled placeholder="Auto total" >
+        <br><br>
+        <input type="submit" value="calcualte">
+    </form>
+
+    <script>
+        let income = document.querySelector('#income')
+        let deduction = document.querySelector('#deduction')
+        let total = document.querySelector('#total')
+        let form = document.querySelector('form')
+        
+         deduction.addEventListener('input' , ()=>{
+            ivalue = Number( income.value )
+            dvalue = Number( deduction.value )
+            tvalue = ivalue - dvalue
+            total.value = tvalue
+         })   
+
+
+        form.addEventListener('submit' , (e)=>{
+            e.preventDefault()
+            ivalue = Number( income.value )
+            dvalue = Number( deduction.value )
+            tvalue = ivalue - dvalue
+            total.value = tvalue
+        })    
+
+    </script>
+
+
+</body>
+</html>
